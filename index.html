@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OLX | Home</title>
+    <link
+      href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="/css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+  </head>
+  <body>
+    <header class="mui-appbar mui--z1">
+      <div class="mui-container">
+        <table>
+          <tr class="mui--appbar-height">
+            <td class="mui--text-title">OLX</td>
+            <td class="mui--text-right">
+              <ul class="mui-list--inline mui--text-body2">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="/form.html">AddItem</a></li>
+                <li>
+                  <a id="sign-in" href="/signin.html">Login</a>
+                  <a id="logout" style="display: none" onclick="doLogout(event)"
+                    >Logout</a
+                  >
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </header>
+
+    <div id="content-wrapper" class="mui--text-center">
+      <div id="items"></div>
+    </div>
+
+    <footer>
+      <div class="mui-container mui--text-center">
+        Made with ♥ by <a href="https://www.muicss.com">T3P</a>
+      </div>
+    </footer>
+    <script src="/js/scripts.js"></script>
+    <script src="js/items.js"></script>
+
+    <script>
+      function onLoad(event) {
+        const logoutEl = document.querySelector("#logout");
+        const singInEl = document.querySelector("#sign-in");
+        const user = sessionStorage.getItem("user");
+        if (user) {
+          // If user logged in
+
+          const userObject = JSON.parse(user);
+          logoutEl.innerHTML = userObject.name + " (Logout)";
+          logoutEl.style.display = "block";
+          singInEl.style.display = "none";
+        } else {
+          // if not logged in
+          singInEl.style.display = "block";
+        }
+      }
+
+      onLoad();
+
+      addItems();
+    </script>
+  </body>
+</html>

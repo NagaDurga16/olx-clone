@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OLX | Home</title>
+    <link
+      href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="/css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+  </head>
+  <body>
+    <header class="mui-appbar mui--z1">
+      <div class="mui-container">
+        <table>
+          <tr class="mui--appbar-height">
+            <td class="mui--text-title">OLX</td>
+            <td class="mui--text-right">
+              <ul class="mui-list--inline mui--text-body2">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#">Pricing</a></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </header>
+
+    <div id="content-wrapper" class="mui--text-center">
+      <form class="mui-form sign-up-form">
+        <legend>Sign In</legend>
+
+        <div class="mui-textfield">
+          <input required type="text" placeholder="Email" name="email" />
+        </div>
+        <div class="mui-textfield">
+          <input
+            required
+            type="password"
+            placeholder="Password"
+            name="password"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="mui-btn mui-btn--raised"
+          onclick="onSignIn(event)"
+        >
+          Submit
+        </button>
+        <p>No account? <a href="signup.html">Sign up here</a></p>
+      </form>
+    </div>
+
+    <footer>
+      <div class="mui-container mui--text-center">
+        Made with ♥ by <a href="https://www.muicss.com">T3P</a>
+      </div>
+    </footer>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>
